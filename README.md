@@ -2,7 +2,7 @@
 
 A SharePoint Framework web part that demonstrates a way to organize and display SharePoint list items using PnPJS and the Pivot and GroupedList Fabric UI components
 
-### Building the code
+### Build and run
 
 ```bash
 git clone the repo
@@ -11,6 +11,7 @@ gulp serve
 ```
 
 ### Install
+
 ```bash
 gulp build
 gulp bundle --ship
@@ -28,8 +29,9 @@ This package produces the following:
 * deploy/* - all resources which should be uploaded to a CDN.
 
 ### Build options
-
+```bash
 gulp build
 gulp serve
 gulp bundle
 gulp package-solution
+```
