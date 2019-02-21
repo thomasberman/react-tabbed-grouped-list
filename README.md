@@ -1,4 +1,4 @@
-## spfx-webpart-internal-projects
+## react-tabbed-grouped-list
 
 A SharePoint Framework web part that demonstrates a way to organize and display SharePoint list items using PnPJS and the Pivot and GroupedList Fabric UI components
 
