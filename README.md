@@ -10,6 +10,18 @@ npm i
 gulp serve
 ```
 
+### Install
+```bash
+gulp build
+gulp bundle --ship
+gulp package-solution --ship
+upload .sppkg to SharePoint app catalog
+
+Installation Note: solution currently requires a specific list to be set up as detailed in the blog post: https://spmaestro.com/fabric-ui-react-groupedlists-inside-pivot-tabs/
+
+TODO: Genericize solution to not require specific list
+```
+
 This package produces the following:
 
 * lib/* - intermediate-stage commonjs build artifacts
