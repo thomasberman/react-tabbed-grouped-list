@@ -2,7 +2,7 @@
 
 A SharePoint Framework web part that demonstrates a way to organize and display SharePoint list items using PnPJS and the Pivot and GroupedList Fabric UI components
 
-### Build and run
+### Build and run in SharePoint workbench
 
 ```bash
 git clone the repo
