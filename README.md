@@ -1,11 +1,12 @@
 ## spfx-webpart-internal-projects
 
+A web part that demonstrates a way to display organize and display information using the Pivot and GroupedList Fabric UI components
+
 ### Building the code
 
 ```bash
 git clone the repo
 npm i
-npm i -g gulp
 gulp serve
 ```
 
