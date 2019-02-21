@@ -15,7 +15,7 @@ export interface IInternalProjectsState {
 export default class InternalProjects extends React.Component<IInternalProjectsProps, IInternalProjectsState> {
 
   public componentDidMount(): void {
-    this._getAndGroupInternalProjectItems().then(res => {
+    this._getAndGroupInternalProjectItems().then((res: _.Dictionary<any[]>) => {
       this.setState({
         listItemsGroupedByOffice: res
       });
@@ -33,17 +33,17 @@ export default class InternalProjects extends React.Component<IInternalProjectsP
   }
 
   private _getAndGroupInternalProjectItems(): Promise<_.Dictionary<any[]>> {
-    return sp.web.lists.getByTitle("Internal Projects").items.get().then(res => groupBy(res, 'Office_x0020_Location'));
+    return sp.web.lists.getByTitle("Internal Projects").items.get().then((res: any[]) => groupBy(res, 'Office_x0020_Location'));
   }
 
   private _generateJSXMarkup(listItemsGroupedByOffice: _.Dictionary<any[]>): JSX.Element[] {
-    let JSXMarkup = [];
+    let JSXMarkup: JSX.Element[] = [];
 
     Object.keys(listItemsGroupedByOffice).forEach((location, index) => {
       const sortedLocationArr: any[] = listItemsGroupedByOffice[location].sort((a, b) => (a.Department < b.Department) ? -1 : (a.Department > b.Department) ? 1 : 0);
       const departmentGroups: IGroup[] = this._generateIGroupsFromArray(sortedLocationArr);
 
-      let children = [];
+      let children: JSX.Element[] = [];
 
       children.push(
         <GroupedList
@@ -65,12 +65,12 @@ export default class InternalProjects extends React.Component<IInternalProjectsP
     const groupedByDepartments = groupBy(sortedOfficeLocationItems, (i: any) => i.Department);
     let groups: IGroup[] = [];
 
-    for (const x in groupedByDepartments) {
+    for (const dept in groupedByDepartments) {
       groups.push({
-        name: x,
-        key: x,
-        startIndex: findIndex(sortedOfficeLocationItems, (i: any) => i.Department === x),
-        count: groupedByDepartments[x].length,
+        name: dept,
+        key: dept,
+        startIndex: findIndex(sortedOfficeLocationItems, (i: any) => i.Department === dept),
+        count: groupedByDepartments[dept].length,
         isCollapsed: true
       });
     }
