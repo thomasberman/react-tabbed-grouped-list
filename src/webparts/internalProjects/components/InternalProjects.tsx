@@ -2,8 +2,7 @@ import * as React from 'react';
 import styles from './InternalProjects.module.scss';
 import { IInternalProjectsProps } from './IInternalProjectsProps';
 import { groupBy, findIndex } from '@microsoft/sp-lodash-subset';
-import { sp, Item } from '@pnp/sp';
-import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
+import { sp } from '@pnp/sp';
 import { Pivot, PivotItem, PivotLinkSize } from 'office-ui-fabric-react/lib/Pivot';
 import { GroupedList, IGroup, IGroupDividerProps } from 'office-ui-fabric-react/lib/components/GroupedList/index';
 import { GroupHeader } from 'office-ui-fabric-react/lib/components/GroupedList/GroupHeader';
@@ -25,11 +24,11 @@ export default class InternalProjects extends React.Component<IInternalProjectsP
 
   public render(): React.ReactElement<IInternalProjectsProps> {
     return (
-        <div className={styles.internalProjects}>
+      <div className={styles.internalProjects}>
         <Pivot linkSize={PivotLinkSize.large}>
-            {this.state && this._generateJSXMarkup(this.state.listItemsGroupedByOffice)}
-          </Pivot>
-        </div>
+          {this.state && this._generateJSXMarkup(this.state.listItemsGroupedByOffice)}
+        </Pivot>
+      </div>
     );
   }
 
@@ -82,12 +81,12 @@ export default class InternalProjects extends React.Component<IInternalProjectsP
     const onToggleSelectGroup = () => {
       props.onToggleCollapse(props.group);
     };
-    return(
+    return (
       <GroupHeader {...props} onToggleSelectGroup={onToggleSelectGroup} />
     );
   }
 
-  private _onRenderCell(nestingDepth: number, item: any, itemIndex: number):JSX.Element {
+  private _onRenderCell(nestingDepth: number, item: any, itemIndex: number): JSX.Element {
     return <div className={styles.subTitle}>{item.Title}</div>;
   }
 
