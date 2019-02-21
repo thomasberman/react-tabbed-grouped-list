@@ -1,6 +1,6 @@
 ## spfx-webpart-internal-projects
 
-A SharePoint Framework web part that demonstrates a way to display organize and display information from SharePoint lists using the Pivot and GroupedList Fabric UI components
+A SharePoint Framework web part that demonstrates a way to organize and display SharePoint list items using PnPJS and the Pivot and GroupedList Fabric UI components
 
 ### Building the code
 
