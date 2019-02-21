@@ -1,0 +1,19 @@
+{
+  "@pnp/generator-spfx": {
+    "framework": "react",
+    "pnpFramework": "reactjs.plus",
+    "pnp-libraries": [],
+    "pnp-vetting": [],
+    "spfxenv": "spo"
+  },
+  "@microsoft/generator-sharepoint": {
+    "environment": "spo",
+    "framework": "react",
+    "isCreatingSolution": true,
+    "version": "1.7.1",
+    "libraryName": "spfx-webpart-internal-projects",
+    "libraryId": "4ef7df4f-ce65-4acf-8832-4c36ea381a3e",
+    "packageManager": "npm",
+    "componentType": "webpart"
+  }
+}
